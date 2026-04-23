@@ -4,7 +4,9 @@ import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
 import ItemCounter from "./ItemCounter";
 
+
 describe("ItemCounter", () => {
+  
   test("should render with default values", () => {
     // This test will check if the component renders correctly with the provided props, and if the buttons and text are displayed as expected. This followings structure is called "Test Props Factory / Mock Props"
     const mockProps = {
@@ -65,4 +67,34 @@ describe("ItemCounter", () => {
     fireEvent.click(button);
     expect(screen.getByText("1")).toBeInTheDocument();
   });
+
+  test("should change to crimson color when quantity is 1", () => {
+    const mockProps = {
+      productName: "Test item",
+      quantity: 1,
+      onIncrement: () => {},
+      onDecrement: () => {},
+    };
+
+    render(<ItemCounter {...mockProps} />);
+    const itemText = screen.getByText("Test item");
+
+    console.log(itemText.style.color) // This will log the style object of the itemText element, which should include the color property set to crimson.
+    expect(itemText.style.color).toBe("crimson");
+  })
+
+  test("should change to black color when quantity is greater than 1", () => {
+    const mockProps = {
+      productName: "Test item",
+      quantity: 5,
+      onIncrement: () => {},
+      onDecrement: () => {},
+    };
+
+    render(<ItemCounter {...mockProps} />);
+    const itemText = screen.getByText("Test item");
+
+    console.log(itemText.style.color) // This will log the style object of the itemText element, which should include the color property set to crimson.
+    expect(itemText.style.color).toBe("aqua");
+  })
 });
