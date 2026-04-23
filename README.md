@@ -1,73 +1,59 @@
-# React + TypeScript + Vite
+# 🛒 Shopping Cart Counter - React + TypeScript
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## This project is a simple shopping cart counter built with React + TypeScript, focused on learning component architecture, custom hooks, and testing.
 
-Currently, two official plugins are available:
+🚀 Features
+▫ Increment and decrement product quantity
+▫ Prevent counter from going below 1
+▫ Reusable ItemCounter component
+▫ Custom hook: useCounter
+▫ Unit testing with Vitest and React Testing Library
+▫ Clean and scalable component structure
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+🧠 Concepts Practiced
+✔ React Functional Components
+✔ Props & TypeScript Interfaces
+✔ Custom Hooks
+✔ State Management with useState
+✔ Event Handling
+✔ Conditional Rendering
+✔ Testing:
+  - Component testing
+  - Hook testing
+  - User interactions (userEvent)
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
 
-## Expanding the ESLint configuration
+📂 Project Structure
+src/
+│
+├── components/
+│   ├── ItemCounter.tsx
+│   ├── ItemCounter.test.tsx
+│
+├── hooks/
+│   ├── useCounter.ts
+│   ├── useCounter.test.ts
+│
+├── data/
+│   ├── ItemInCartData.ts
+│
+├── App.tsx
+└── main.tsx
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+🧪 Testing
+This project uses:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Vitest
+- React Testing Library
+- user-event
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Run tests:
+npm run test
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+⚙️ Installation
+npm install
+npm run dev
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+🧑‍💻 Author
+Jeanpiero Parra
